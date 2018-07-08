@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.62
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
@@ -67,6 +67,7 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/perl-Test-Reporter
 cp LICENSE %{buildroot}/usr/share/doc/perl-Test-Reporter/LICENSE
+cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Test-Reporter/deblicense_copyright
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot}
 else
@@ -87,6 +88,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(-,root,root,-)
 /usr/share/doc/perl-Test-Reporter/LICENSE
+/usr/share/doc/perl-Test-Reporter/deblicense_copyright
 
 %files man
 %defattr(-,root,root,-)
