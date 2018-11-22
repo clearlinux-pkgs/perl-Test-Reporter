@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.5203
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.5203.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.5203.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
@@ -102,13 +102,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter/Transport.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter/Transport/File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter/Transport/HTTPGateway.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter/Transport/Mail/Send.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter/Transport/Net/SMTP.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Reporter/Transport/Net/SMTP/TLS.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter/Transport.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter/Transport/File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter/Transport/HTTPGateway.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter/Transport/Mail/Send.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter/Transport/Net/SMTP.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Reporter/Transport/Net/SMTP/TLS.pm
 
 %files bin
 %defattr(-,root,root,-)
