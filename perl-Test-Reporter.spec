@@ -102,13 +102,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter.pm
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter/Transport.pm
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter/Transport/File.pm
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter/Transport/HTTPGateway.pm
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter/Transport/Mail/Send.pm
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter/Transport/Net/SMTP.pm
-/usr/lib/perl5/vendor_perl/5.28.1Test/Reporter/Transport/Net/SMTP/TLS.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/File.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/HTTPGateway.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/Mail/Send.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/Net/SMTP.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/Net/SMTP/TLS.pm
 
 %files bin
 %defattr(-,root,root,-)
