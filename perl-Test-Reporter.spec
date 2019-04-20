@@ -81,10 +81,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/File.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Test/Reporter/Transport/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter/Transport.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter/Transport/File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter/Transport/Null.pm
 
 %files dev
 %defattr(-,root,root,-)
