@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.62
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
