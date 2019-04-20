@@ -4,11 +4,11 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.62
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
-Summary  : 'sends test results to cpan-testers@perl.org'
+Summary  : Test::Reporter - sends test results to cpan-testers@perl.org
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Test-Reporter-license = %{version}-%{release}
@@ -24,6 +24,7 @@ version 1.62
 Summary: dev components for the perl-Test-Reporter package.
 Group: Development
 Provides: perl-Test-Reporter-devel = %{version}-%{release}
+Requires: perl-Test-Reporter = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Reporter package.
