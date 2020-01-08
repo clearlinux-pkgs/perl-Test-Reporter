@@ -4,14 +4,15 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.62
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
-Summary  : Test::Reporter - sends test results to cpan-testers@perl.org
+Summary  : 'sends test results to cpan-testers@perl.org'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Test-Reporter-license = %{version}-%{release}
+Requires: perl-Test-Reporter-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -38,18 +39,28 @@ Group: Default
 license components for the perl-Test-Reporter package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Reporter package.
+Group: Default
+Requires: perl-Test-Reporter = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Reporter package.
+
+
 %prep
 %setup -q -n Test-Reporter-1.62
-cd ..
-%setup -q -T -D -n Test-Reporter-1.62 -b 1
+cd %{_builddir}
+tar xf %{_sourcedir}/libtest-reporter-perl_1.62-1.debian.tar.xz
+cd %{_builddir}/Test-Reporter-1.62
 mkdir -p deblicense/
-cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Test-Reporter-1.62/deblicense/
+cp -r %{_builddir}/debian/* %{_builddir}/Test-Reporter-1.62/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -59,7 +70,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -68,8 +79,8 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Test-Reporter
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/deblicense_copyright
+cp %{_builddir}/Test-Reporter-1.62/LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/dac6dbf1b0a975e376bd6cd27cad5a4cd3c3cd32
+cp %{_builddir}/Test-Reporter-1.62/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/2bd6e6b65d74a94d5be74199808ef3a79f84b64d
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -82,10 +93,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter/Transport.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter/Transport/File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Reporter/Transport/Null.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -96,5 +103,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Test-Reporter/LICENSE
-/usr/share/package-licenses/perl-Test-Reporter/deblicense_copyright
+/usr/share/package-licenses/perl-Test-Reporter/2bd6e6b65d74a94d5be74199808ef3a79f84b64d
+/usr/share/package-licenses/perl-Test-Reporter/dac6dbf1b0a975e376bd6cd27cad5a4cd3c3cd32
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter/Transport.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter/Transport/File.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter/Transport/Null.pm
