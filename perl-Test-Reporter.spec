@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.62
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
@@ -80,7 +80,7 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Test-Reporter
 cp %{_builddir}/Test-Reporter-1.62/LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/dac6dbf1b0a975e376bd6cd27cad5a4cd3c3cd32
-cp %{_builddir}/Test-Reporter-1.62/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/2bd6e6b65d74a94d5be74199808ef3a79f84b64d
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-Test-Reporter/2bd6e6b65d74a94d5be74199808ef3a79f84b64d
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -108,7 +108,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter/Transport.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter/Transport/File.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Test/Reporter/Transport/Null.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter/Transport.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter/Transport/File.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter/Transport/Null.pm
