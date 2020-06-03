@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Reporter
 Version  : 1.62
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Test-Reporter-1.62.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtest-reporter-perl/libtest-reporter-perl_1.62-1.debian.tar.xz
@@ -108,7 +108,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter/Transport.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter/Transport/File.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/Reporter/Transport/Null.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/Reporter.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/Reporter/Transport.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/Reporter/Transport/File.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/Reporter/Transport/Null.pm
